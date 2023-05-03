@@ -1,28 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StatBox, StatText } from './FeedbackForm.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <div>
-      <h2>Statistics</h2>
-      <p>Good:{good}</p>
-      <p>
+    <StatBox>
+      <StatText>Good:{good}</StatText>
+      <StatText>
         Neutral:
         {neutral}
-      </p>
-      <p>
+      </StatText>
+      <StatText>
         Bad:
         {bad}
-      </p>
-      <p>
+      </StatText>
+      <StatText>
         Total:
         {total()}
-      </p>
-      <p>
+      </StatText>
+      <StatText>
         Positive feedback:
         {positivePercentage()}%
-      </p>
-    </div>
+      </StatText>
+    </StatBox>
   );
 };
 export default Statistics;

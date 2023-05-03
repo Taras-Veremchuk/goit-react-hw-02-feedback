@@ -4,8 +4,9 @@ import Section from 'components/FeedbackForm/Section';
 import Statistics from 'components/FeedbackForm/Statistics';
 import FeedbackOptions from 'components/FeedbackForm/FeedbackOptions';
 import Notification from 'components/FeedbackForm/Notification';
+import { Container } from './FeedbackForm/FeedbackForm.styled';
 
-export class App extends React.Component {
+ class App extends React.Component {
   static defaultProps = {
     good: 0,
     neutral: 0,
@@ -63,7 +64,7 @@ export class App extends React.Component {
   render() {
     const { good, neutral, bad, visible } = this.state;
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
@@ -71,7 +72,7 @@ export class App extends React.Component {
             this={this}
           />
         </Section>
-        <Section>
+        <Section title="Statistic">
           {visible ? (
             <Statistics
               good={good}
@@ -81,10 +82,11 @@ export class App extends React.Component {
               positivePercentage={this.countPositiveFeedbackPercentage}
             />
           ) : (
-            <Notification message="There is no feedback"></Notification>
+            <Notification message="No feedback given"></Notification>
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }
+export default App;

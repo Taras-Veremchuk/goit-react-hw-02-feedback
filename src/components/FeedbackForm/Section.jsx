@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Sect,Title } from './FeedbackForm.styled';
 
 const Section = ({ title, children }) => {
   return (
-    <div>
-      {title && <h1>{title}</h1>}
+    <Sect>
+      {title && <Title>{title}</Title>}
       {children}
-    </div>
+    </Sect>
   );
 };
 
